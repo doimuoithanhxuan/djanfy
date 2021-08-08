@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for song in songs %}
+    <article>
+        <header>
+            <h2>{{song.title}}</h2>
+        </header>
+        <section>
+            <audio src="{{ song.file.url }}" controls></audio>
+        </section>
+    </article>
+{% empty %}
+    <p class="font-black uppercase">no songs found</p>
+{% endfor %}
+
+{% endblock content %}

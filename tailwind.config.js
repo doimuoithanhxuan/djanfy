@@ -1,6 +1,9 @@
 module.exports = {
   mode: 'jit',
-  purge: [],
+  purge: [
+    "./templates/**/*.html",
+    "./player/templates/**/*.html"
+  ],
   darkMode: 'class',
   theme: {
     extend: {},

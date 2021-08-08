@@ -1,0 +1,49 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+        exclude: |
+            (?x)^(
+            )$
+    -   id: check-yaml
+    -   id: check-added-large-files
+        exclude: |
+            (?x)^(
+            )$
+-   repo: local
+    hooks:
+    -   id: isort-local
+        name: isort-local
+        language: python
+        types: [python, file]
+        entry: isort
+        exclude: |
+            (?x)(
+                migrations/.+
+            )$
+-   repo: local
+    hooks:
+    -   id: black-local
+        name: black-local
+        language: python
+        types: [python, file]
+        entry: black
+        exclude: |
+            (?x)(
+                migrations/.+
+            )$
+-   repo: local
+    hooks:
+    -   id: flake8-local
+        name: flake8-local
+        language: python
+        types: [python, file]
+        entry: flake8
+        exclude: |
+            (?x)(
+                migrations/.+
+            )$
