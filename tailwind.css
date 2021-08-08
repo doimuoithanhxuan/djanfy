@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    input {
+        @apply border p-2 rounded;
+    }
+    input:invalid {
+        @apply border-red-200;
+    }
+    label {
+        @apply p-2 uppercase;
+    }
+    button {
+        @apply p-2 bg-blue-200 rounded text-black dark:text-white font-bold;
+        @apply hover:bg-blue-600 hover:text-white dark:hover:text-black;
+    }
+  }

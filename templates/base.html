@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
+    {% include "header.html" %}
     <div class="text-black dark:text-white">
-        <main class="md:w-3/4 md:mx-auto">
+        <main class="pt-8 md:w-3/4 md:mx-auto">
             {% block content %}{% endblock content %}
         </main>
     </div>
